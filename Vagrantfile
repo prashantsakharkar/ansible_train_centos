@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
     controller.machine_virtual_size = 200
     controller.cpus = 8
     controller.cputopology :sockets => '4', :cores => '2', :threads => '1'
-    controller.memory = 51200
+    controller.memory = 32768
     end
   controller.vm.box = "generic/centos7"
   controller.vm.hostname = "controller"
@@ -86,7 +86,7 @@ Vagrant.configure("2") do |config|
     mon.vm.provider :libvirt do |mon|
     mon.cpus = 2
     mon.cputopology :sockets => '1', :cores => '2', :threads => '1'
-    mon.memory = 10240
+    mon.memory = 4096
     end
   mon.vm.box = "generic/centos7"
   mon.vm.hostname = "mon"
@@ -104,7 +104,7 @@ Vagrant.configure("2") do |config|
     osd1.cpus = 2
     osd1.storage :file, :size => '200G', :type => 'raw'
     osd1.cputopology :sockets => '1', :cores => '2', :threads => '1'
-    osd1.memory = 10240
+    osd1.memory = 4096
     end
   osd1.vm.box = "generic/centos7"
   osd1.vm.hostname = "osd1"
@@ -122,7 +122,7 @@ Vagrant.configure("2") do |config|
     osd2.cpus = 2
     osd2.storage :file, :size => '200G', :type => 'raw'
     osd2.cputopology :sockets => '1', :cores => '2', :threads => '1'
-    osd2.memory = 10240
+    osd2.memory = 4096
     end
   osd2.vm.box = "generic/centos7"
   osd2.vm.hostname = "osd2"
@@ -140,7 +140,7 @@ Vagrant.configure("2") do |config|
     osd3.cpus = 2
     osd3.storage :file, :size => '200G', :type => 'raw'
     osd3.cputopology :sockets => '1', :cores => '2', :threads => '1'
-    osd3.memory = 10240
+    osd3.memory = 4096
     end
   osd3.vm.box = "generic/centos7"
   osd3.vm.hostname = "osd3"
@@ -158,7 +158,7 @@ Vagrant.configure("2") do |config|
     iscsi.cpus = 2
     iscsi.storage :file, :size => '200G', :type => 'raw'
     iscsi.cputopology :sockets => '1', :cores => '2', :threads => '1'
-    iscsi.memory = 10240
+    iscsi.memory = 4096
     end
   iscsi.vm.box = "generic/centos7"
   iscsi.vm.hostname = "iscsi"
