@@ -176,7 +176,7 @@ Vagrant.configure("2") do |config|
     ansiblehost.vm.provider :libvirt do |ansible|
     ansible.machine_virtual_size = 200
     ansible.cpus = 2
-    ansible.cputopology :sockets => '1', :cores => '4', :threads => '1'
+    ansible.cputopology :sockets => '1', :cores => '2', :threads => '1'
     ansible.memory = 10240
     end
   ansiblehost.vm.box = "generic/centos7"
