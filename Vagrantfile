@@ -61,8 +61,8 @@ Vagrant.configure("2") do |config|
    config.vm.define "compute" do |compute|
     compute.vm.provider :libvirt do |compute|
     compute.machine_virtual_size = 200
-    compute.cpus = 8
-    compute.cputopology :sockets => '4', :cores => '2', :threads => '1'
+    compute.cpus = 4
+    compute.cputopology :sockets => '2', :cores => '2', :threads => '1'
     compute.memory = 10240
     end
   compute.vm.box = "generic/centos7"
@@ -84,8 +84,8 @@ Vagrant.configure("2") do |config|
 ##########################cephmon configuration#########################
   config.vm.define "mon" do |mon|
     mon.vm.provider :libvirt do |mon|
-    mon.cpus = 8
-    mon.cputopology :sockets => '4', :cores => '2', :threads => '1'
+    mon.cpus = 2
+    mon.cputopology :sockets => '1', :cores => '2', :threads => '1'
     mon.memory = 10240
     end
   mon.vm.box = "generic/centos7"
@@ -101,9 +101,9 @@ Vagrant.configure("2") do |config|
 ##########################osd1 configuration#########################
   config.vm.define "osd1" do |osd1|
    osd1.vm.provider :libvirt do |osd1|
-    osd1.cpus = 8
+    osd1.cpus = 2
     osd1.storage :file, :size => '200G', :type => 'raw'
-    osd1.cputopology :sockets => '4', :cores => '2', :threads => '1'
+    osd1.cputopology :sockets => '1', :cores => '2', :threads => '1'
     osd1.memory = 10240
     end
   osd1.vm.box = "generic/centos7"
@@ -119,9 +119,9 @@ Vagrant.configure("2") do |config|
 ##########################osd2 configuration#########################
   config.vm.define "osd2" do |osd2|
     osd2.vm.provider :libvirt do |osd2|
-    osd2.cpus = 8
+    osd2.cpus = 2
     osd2.storage :file, :size => '200G', :type => 'raw'
-    osd2.cputopology :sockets => '4', :cores => '2', :threads => '1'
+    osd2.cputopology :sockets => '1', :cores => '2', :threads => '1'
     osd2.memory = 10240
     end
   osd2.vm.box = "generic/centos7"
@@ -137,9 +137,9 @@ Vagrant.configure("2") do |config|
 ###########################osd3 configuration#########################
   config.vm.define "osd3" do |osd3|
     osd3.vm.provider :libvirt do |osd3|
-    osd3.cpus = 8
+    osd3.cpus = 2
     osd3.storage :file, :size => '200G', :type => 'raw'
-    osd3.cputopology :sockets => '4', :cores => '2', :threads => '1'
+    osd3.cputopology :sockets => '1', :cores => '2', :threads => '1'
     osd3.memory = 10240
     end
   osd3.vm.box = "generic/centos7"
@@ -155,9 +155,9 @@ Vagrant.configure("2") do |config|
 ##########################iscsi configuration#########################
   config.vm.define "iscsi" do |iscsi|
     iscsi.vm.provider :libvirt do |iscsi|
-    iscsi.cpus = 8
+    iscsi.cpus = 2
     iscsi.storage :file, :size => '200G', :type => 'raw'
-    iscsi.cputopology :sockets => '4', :cores => '2', :threads => '1'
+    iscsi.cputopology :sockets => '1', :cores => '2', :threads => '1'
     iscsi.memory = 10240
     end
   iscsi.vm.box = "generic/centos7"
@@ -175,8 +175,8 @@ Vagrant.configure("2") do |config|
  config.vm.define "ansiblehost" do |ansiblehost| 
     ansiblehost.vm.provider :libvirt do |ansible|
     ansible.machine_virtual_size = 200
-    ansible.cpus = 8
-    ansible.cputopology :sockets => '2', :cores => '4', :threads => '1'
+    ansible.cpus = 2
+    ansible.cputopology :sockets => '1', :cores => '4', :threads => '1'
     ansible.memory = 10240
     end
   ansiblehost.vm.box = "generic/centos7"
