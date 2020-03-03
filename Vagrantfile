@@ -61,9 +61,9 @@ Vagrant.configure("2") do |config|
    config.vm.define "compute" do |compute|
     compute.vm.provider :libvirt do |compute|
     compute.machine_virtual_size = 200
-    compute.cpus = 8
-    compute.cputopology :sockets => '4', :cores => '2', :threads => '1'
-    compute.memory = 10240
+    compute.cpus = 16
+    compute.cputopology :sockets => '4', :cores => '4', :threads => '1'
+    compute.memory = 40960
     end
   compute.vm.box = "generic/centos7"
   compute.vm.hostname = "compute"
